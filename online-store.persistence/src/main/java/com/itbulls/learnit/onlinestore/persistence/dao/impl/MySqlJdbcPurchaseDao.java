@@ -163,7 +163,7 @@ public class MySqlJdbcPurchaseDao implements PurchaseDao {
 	@Override
 	public void updatePurchaseStatus(PurchaseDto purchase) {
 		try (var conn = DBUtils.getConnection(); 
-				var ps = conn.prepareStatement("UPDATE `learn_it_db`.`purchase` SET `fk_purchase_purchase_status` = ? WHERE (`id` = ?);")) {
+				var ps = conn.prepareStatement("UPDATE `dev`.`purchase` SET `fk_purchase_purchase_status` = ? WHERE (`id` = ?);")) {
 			ps.setInt(1, purchase.getPurchaseStatusDto().getId());
 			ps.setInt(2, purchase.getId());
 			ps.executeUpdate();
