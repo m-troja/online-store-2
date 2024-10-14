@@ -15,7 +15,7 @@ public class C3p0Demo {
     static {
         try {
             cpds.setDriverClass("com.mysql.cj.jdbc.Driver");
-            cpds.setJdbcUrl("jdbc:mysql://localhost:3306/learn_it_db");
+            cpds.setJdbcUrl("jdbc:mysql://localhost:3306/dev");
             cpds.setUser("root");
             cpds.setPassword("root");
             cpds.setMaxIdleTime(100);

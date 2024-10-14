@@ -60,7 +60,7 @@ public class MySqlJdbcProductDao implements ProductDao {
 		product.setProductName(rs.getString("product_name"));
 		product.setPrice(rs.getBigDecimal("price"));
 		product.setCategoryDto(categoryDao.getCategoryByCategoryId(rs.getInt("category_id")));
-		product.setImgName(rs.getString("img_name"));
+		product.setImgName(rs.getString("image_name"));
 		product.setDescription(rs.getString("description"));
 		product.setGuid(rs.getString("guid"));
 		return product;
@@ -70,7 +70,7 @@ public class MySqlJdbcProductDao implements ProductDao {
 	public List<ProductDto> getProductsLikeName(String searchQuery) {
 		try (var conn = DBUtils.getConnection();
 				var ps = conn
-						.prepareStatement("SELECT * FROM learn_it_db.product "
+						.prepareStatement("SELECT * FROM dev.product "
 								+ "WHERE UPPER(product_name) LIKE UPPER(CONCAT('%',?,'%'))");) {
 			
 			ps.setString(1, searchQuery);
@@ -96,7 +96,7 @@ public class MySqlJdbcProductDao implements ProductDao {
 	public List<ProductDto> getProductsByCategoryId(Integer id) {
 		try (var conn = DBUtils.getConnection();
 				var ps = conn
-						.prepareStatement("SELECT * FROM learn_it_db.product "
+						.prepareStatement("SELECT * FROM dev.product "
 								+ "WHERE category_id = ?");) {
 			
 			ps.setInt(1, id);
@@ -124,7 +124,7 @@ public class MySqlJdbcProductDao implements ProductDao {
 			Integer paginationLimit) {
 		try (var conn = DBUtils.getConnection();
 				var ps = conn
-						.prepareStatement("SELECT * FROM learn_it_db.product "
+						.prepareStatement("SELECT * FROM dev.product "
 								+ "WHERE category_id = ? LIMIT ?, ?");) {
 			
 			ps.setInt(1, categoryId);
@@ -195,7 +195,7 @@ public class MySqlJdbcProductDao implements ProductDao {
 	public List<ProductDto> getProductsLikeNameForPageWithLimit(String searchQuery, Integer page, Integer paginationLimit) {
 		try (var conn = DBUtils.getConnection();
 				var ps = conn
-						.prepareStatement("SELECT * FROM learn_it_db.product "
+						.prepareStatement("SELECT * FROM dev.product "
 								+ "WHERE UPPER(product_name) LIKE UPPER(CONCAT('%',?,'%')) LIMIT ?, ?");) {
 			
 			ps.setString(1, searchQuery);

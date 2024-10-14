@@ -14,7 +14,7 @@ public class HikaricpDemo {
 	private static HikariDataSource ds;
 
 	static {
-		config.setJdbcUrl("jdbc:mysql://localhost:3306/learn_it_db");
+		config.setJdbcUrl("jdbc:mysql://localhost:3306/dev");
 		config.setUsername("root");
 		config.setPassword("root");
 		config.addDataSourceProperty("cachePrepStmts", "true");

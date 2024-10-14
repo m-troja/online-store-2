@@ -15,7 +15,7 @@ public class DbcpDemo {
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		}
-		ds.setUrl("jdbc:mysql://localhost:3306/learn_it_db");
+		ds.setUrl("jdbc:mysql://localhost:3306/dev");
 		ds.setUsername("root");
 		ds.setPassword("root");
 		ds.setMinIdle(3);
