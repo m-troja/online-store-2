@@ -3,12 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.itbulls.learnit</groupId>
-	<artifactId>online-store</artifactId>
+	<artifactId>online-store-hibernate</artifactId>
 	<packaging>pom</packaging>
 	<version>1</version>
 
   <scm>
-    <developerConnection>scm:local|C:\Development_Udemy\online-store</developerConnection>
+    <developerConnection>scm:local|C:\Development_Udemy\online-store-hibernate</developerConnection>
   </scm>
   
   
@@ -21,9 +21,9 @@
 	</properties>
 
 	<modules>
-		<module>online-store.core</module>
-		<module>online-store.persistence</module>
-		<module>online-store.web</module>
+		<module>online-store-hibernate.core</module>
+		<module>online-store-hibernate.persistence</module>
+		<module>online-store-hibernate.web</module>
 	</modules>
 
 	<dependencies>
